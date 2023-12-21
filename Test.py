@@ -1,16 +1,15 @@
-from Analytic_Number_Theory import ANT
+from cellularhomology import CellularHomology as CH
+import numpy as np
+
+
+d_0 = np.array([[1,0],[0,1]])
+d_1 = np.array([[1,0,-1,0],[-1,0,1,0]],dtype=int)
+d_2= np.array([[0,0],[1,1],[0,0],[1,1]],dtype=int)
+d_3 = np.array([[1,0],[0,1]])
 
 
 def main():
-    limiter = int(input("Input the limit: "))
-    pi_1mod4 = ANT.arithmetic_progression(limiter,4,1)
-    pi_3mod4 = ANT.arithmetic_progression(limiter,4,3)
-    pi_2mod4 = ANT.arithmetic_progression(limiter,4,2)
-    primes = ANT.prime_list(limiter)
-
-    print(f"Sum of all modulo 4: {len(pi_1mod4)+len(pi_2mod4)+len(pi_3mod4)}")
-    print(f"Regular primes: {len(primes)}")
-
+    print(CH.homology(d_2,d_3))
 if __name__ == "__main__":
     main()
 
