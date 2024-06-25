@@ -10,12 +10,12 @@ def division_graph(m):
     for i in range(m):
         direction.append((i*10)%m)
         G.add_edge(i,direction[i])
-    nx.draw(G, pos, with_labels=True)
-    plt.savefig(f"./nt/graph_img/{m}.png")
+    plt.figure(figsize=(30, 30))
+    nx.draw(G, pos, with_labels=True,node_size=2000)
+    #plt.savefig(f"./nt/graph_img/{m}.png")
+    plt.savefig(f"circular_graph.png")
     plt.clf()
     plt.close()
 
 
-for i in primes:
-   division_graph(i)
-
+division_graph(6)
