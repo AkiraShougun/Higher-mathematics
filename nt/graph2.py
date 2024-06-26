@@ -2,8 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-
-def division_graph(m,p):
+perfect = [6, 28, 496, 8128]
+def division_graph(m,p=10):
     direction = []
     G = nx.DiGraph()  # Create a directed graph
     G.add_nodes_from(range(m))
@@ -36,8 +36,9 @@ def division_graph(m,p):
         font_weight='bold'
     )
     
-    plt.savefig(f"./nt/index/{p}.png")
+    plt.savefig(f"{m}.png")
     plt.clf()
     plt.close()
 
-division_graph(7,7)
+
+division_graph(15,2*3*5)
